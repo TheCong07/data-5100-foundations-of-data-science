@@ -1,10 +1,8 @@
 # Weather Project
 
-> A brief description of what the project does and its purpose.
+> This project analyzes and compares precipitation data from Seattle, WA and New York, NY (2018–2022) to evaluate whether Seattle’s reputation as the “rainiest” city is supported by actual data.
 
 ---
-
-## Project Overview
 
 ## Project Overview
 
@@ -31,8 +29,8 @@ The project uses daily precipitation data from NOAA’s Climate Data Online (CDO
 
 ## Data
 
-- **Source:** [Link to the data source(s)](https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND)
-- **Description:** Brief overview of the dataset features, size, and format
+- **Source:** [NOAA Climate Data Online (CDO) – Daily Summaries](https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND)
+- **Description:** Daily precipitation (PRCP) records for Seattle (Sea-Tac Airport station) and New York (Central Park station) covering Jan 1, 2018 – Dec 31, 2022. Data is provided in CSV format and includes station identifiers, dates, and precipitation values (tenths of millimeters).
 - **License:** (if applicable)
 
 ---
