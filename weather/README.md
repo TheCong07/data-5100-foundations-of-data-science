@@ -31,6 +31,22 @@ The project uses daily precipitation data from NOAA’s Climate Data Online (CDO
 
 - **Source:** [NOAA Climate Data Online (CDO) – Daily Summaries](https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND)
 - **Description:** Daily precipitation (PRCP) records for Seattle (Sea-Tac Airport station) and New York (Central Park station) covering Jan 1, 2018 – Dec 31, 2022. Data is provided in CSV format and includes station identifiers, dates, and precipitation values (tenths of millimeters).
+
+## Data Preparation
+
+The raw daily precipitation data was downloaded from NOAA’s Climate Data Online (CDO) tool.
+
+### Steps Taken
+
+1. Loaded the raw CSV dataset into a Pandas DataFrame.
+2. Filtered St Louis's dataset to include only one station from 01/01/2018 to 12/31/2022.
+3. Checked for missing values in the `precipitation` column.
+4. Replaced missing precipitation values for Seattle with the average precipitation of the same day-of-year.
+5. Saved the cleaned dataset for analysis.
+
+- **Data preparation notebook:** `Weather_Data_Preparation.ipynb`
+- **Clean data file:** `data/clean_precipitation.csv`
+
 - **License:** (if applicable)
 
 ---
