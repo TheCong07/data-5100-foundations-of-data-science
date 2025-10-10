@@ -27,6 +27,13 @@ The project uses daily precipitation data from NOAA’s Climate Data Online (CDO
 
 ---
 
+## Notebooks
+
+- Weather_Data_Preparation_SEA_NYC.ipynb – Prepares the raw precipitation datasets, performs cleaning, handles missing values, and outputs a clean data file.
+- Weather_Data_Processing_SEA_NYC.ipynb – Performs the analysis, including exploratory data analysis, visualizations, and hypothesis testing.
+
+---
+
 ## Data
 
 - **Source:** [NOAA Climate Data Online (CDO) – Daily Summaries](https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND)
@@ -38,13 +45,12 @@ The raw daily precipitation data was downloaded from NOAA’s Climate Data Onlin
 
 ### Steps Taken
 
-1. Loaded the raw CSV dataset into a Pandas DataFrame.
-2. Filtered St Louis's dataset to include only one station from 01/01/2018 to 12/31/2022.
-3. Checked for missing values in the `precipitation` column.
-4. Replaced missing precipitation values for Seattle with the average precipitation of the same day-of-year.
-5. Saved the cleaned dataset for analysis.
+1. Inspected and downloaded raw NOAA daily precipitation datasets for NY city.
+2. Converted data types.
+3. Imputed missing precipitation values using day-of-year averages.
+4. Saved the cleaned dataset in a tidy long format with consistent column names.
 
-- **Data preparation notebook:** `Weather_Data_Preparation.ipynb`
+- **Data preparation notebook:** `Weather_Data_Preparation_SEA_NYC.ipynb`
 - **Clean data file:** `data/clean_precipitation.csv`
 
 - **License:** (if applicable)
@@ -53,13 +59,27 @@ The raw daily precipitation data was downloaded from NOAA’s Climate Data Onlin
 
 ## Analysis
 
-Describe the notebooks and/or scripts used to perform the analysis. Specify the order in which the code should be run to reproduce the results.
+- Created derived variables, including any_precipitation, month, and year.
+- Produced descriptive statistics and exploratory visualizations using multiple type of graphs and charts to compare rainfall frequency and intensity.
+- Conducted hypothesis testing:
+  - t-tests to compare average daily precipitation between cities by month.
+  - Proportion z-tests to compare the frequency of rainy days between cities by month.
+- Interpreted the results to distinguish between rainfall frequency (Seattle higher) and rainfall amount per day (New York higher in some months).
+
+- **Data processing notebook:** `Weather_Data_Processing_SEA_NYC.ipynb`
 
 ---
 
 ## Results
 
-Include a short discussion of the findings and what they imply.
+The analysis helps me answer the question “Does Seattle get more rain than New York?” from two different perspectives:
+
+- First perspective: Seattle has a higher proportion of rainy days than New York in most months, except during the summer (when Seattle has almost no rain). In other words, Seattle rains more frequently.
+- Second perspective: Although New York has fewer rainy days than Seattle, the overall picture still shows that New York receives a considerable amount of rainfall over the years. Looking more closely, we can see that New York has some days with rainfall more than double that of Seattle. This indicates that New York often experiences heavy rain events, like storms, but they occur less frequently.
+
+#### Conclusion:
+
+Seattle has more rainy days if we measure by frequency. Meanwhile, if we measure by the average rainfall per rainy day, New York has higher values. To truly answer which city “rains more”, I think we first need to clarify in which sense — frequency or intensity — we are defining “more rain.”
 
 ---
 
