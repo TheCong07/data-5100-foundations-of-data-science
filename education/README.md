@@ -10,7 +10,7 @@ This project explores the relationship between school performance on college ent
 
 - **Objective:** To determine whether school-level ACT and SAT performance correlates with socioeconomic factors such as income level, or living in married family, thereby revealing patterns of educational inequality.
 - **Domain:** Education and Social Science / Public Policy
-- **Key Techniques:** Data Cleaning, Data Integration, Exploratory Data Analysis (EDA), Correlation Analysis, Visualization, and Time Series.
+- **Key Techniques:** Data Cleaning, Data Integration, Exploratory Data Analysis (EDA), Correlation Analysis, Visualization, and Outlier Detection.
 
 ---
 
@@ -41,7 +41,14 @@ This project explores the relationship between school performance on college ent
   Together, these datasets enable a comparative analysis of school performance relative to socioeconomic conditions.
   - File Format: Excel (.xlsx) and CSV (.csv)
   - Size: Each file contains tens of thousands of rows representing high schools across the U.S.
-  - Key Variables: School identifiers (NCESSCH), average ACT/SAT scores, location, and demographic metrics.
+  - Key Variables:
+    - rate_unemployment – unemployment rate
+    - percent_college – adults with college degrees
+    - percent_married – adults in married households
+    - median_income – median household income
+    - percent_lunch – students eligible for free/reduced lunch
+    - charter - whether a school is charter or not
+    - average_act – average ACT score per school
 - **License:** (if applicable)
 
 ### Data Preparation
@@ -63,13 +70,31 @@ This project explores the relationship between school performance on college ent
 
 ## Analysis
 
-Describe the notebooks and/or scripts used to perform the analysis. Specify the order in which the code should be run to reproduce the results.
+### Correlation Analysis
+
+- A correlation matrix was created to explore relationships between socioeconomic variables and ACT scores.
+- The results show that all socioeconomic predictors are meaningfully correlated with the average ACT score:
+  - The percent of students on free/reduced lunch has the strongest negative correlation (-0.78) with ACT scores.
+  - Median income, percent college, and percent married each have moderate positive correlations (~0.44–0.46) with ACT scores.
+  - Unemployment rate shows a negative correlation (-0.43) with ACT performance.
+
+This indicates that lower income and higher poverty levels are strongly associated with lower standardized test performance.
+
+### Outlier Detection (Boxplots)
+
+- Outliers were identified using the interquartile range (IQR) method and visualized through boxplots.
+- Key observations:
+  - Socioeconomic proportions such as unemployment rate, percent college, and percent married show some outliers.
+  - Median income exhibits high-value outliers typical of income data distributions.
 
 ---
 
 ## Results
 
-Include a short discussion of the findings and what they imply.
+Overall, the analysis shows a some overall outcomes:
+
+- Higher-income communities with greater education attainment perform better on ACT exams.
+- Higher poverty and unemployment rates correlate with lower average ACT scores.
 
 ---
 
